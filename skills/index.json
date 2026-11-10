@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "vaper-club-discovery",
+      "type": "skill-md",
+      "description": "Search Vaper.club for vape industry posts, brands and retail shops. Use when users ask about industry news, articles, brand background or where shops are located.",
+      "url": "/.well-known/agent-skills/vaper-club-discovery/SKILL.md",
+      "digest": "sha256:a893498afb5f3d2dda9d8e7d167d341b98f4699439e54bd65469c456303e8bf0"
+    },
+    {
+      "name": "vaper-club-product-research",
+      "type": "skill-md",
+      "description": "Research and compare vape products with Vaper.club data. Use when users want to find a product, identify its model, see prices and stock across shops, or compare offers of the same model.",
+      "url": "/.well-known/agent-skills/vaper-club-product-research/SKILL.md",
+      "digest": "sha256:2e86edeb0f0917ddb631577bdcd17015a69fdbdffc32aa9e89ba01e0a8537cad"
+    },
+    {
+      "name": "vaper-club-brand-research",
+      "type": "skill-md",
+      "description": "Build a brand profile from Vaper.club data. Use when users ask about a vape brand's background, official website, company, aliases, product categories or models.",
+      "url": "/.well-known/agent-skills/vaper-club-brand-research/SKILL.md",
+      "digest": "sha256:4e03c47189b7d97da04d6ce317744e5f3ec2156829095a02af489cffa1b0eac1"
+    },
+    {
+      "name": "vaper-club-product-reviews",
+      "type": "skill-md",
+      "description": "Summarize user reviews of a vape product from Vaper.club. Use when users ask what people think of a product, its rating, or common praise and complaints.",
+      "url": "/.well-known/agent-skills/vaper-club-product-reviews/SKILL.md",
+      "digest": "sha256:7ae8d13bc070016f1f01fe9ef1a092fc1c89124700efd866f699dc312fac6dd7"
+    }
+  ]
+}

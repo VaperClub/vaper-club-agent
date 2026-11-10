@@ -26,12 +26,13 @@ Connect AI agents and MCP-compatible applications directly to Vaper Club.
 | Property | Value |
 |---|---|
 | Service | Vaper Club MCP |
-| Endpoint | `https://api.vaper.club/mcp/` |
+| Endpoint | `https://api.vaper.club/mcp` |
 | Protocol | Model Context Protocol (MCP) |
 | Transport | Streamable HTTP |
-| Documentation | [MCP Documentation](https://vaper.club/developers/mcp.md) |
+| Authentication | None (rate limited per IP) |
+| Documentation | [MCP Documentation](https://vaper.club/developers/mcp.md) · [mcp/README.md](mcp/README.md) |
 
-The MCP server provides a standardized interface for AI agents to interact with Vaper Club's product information services.
+The server exposes read-only tools: `get_latest_posts`, `search_posts`, `search_brands`, `get_brand_details`, `search_shops`, `get_shop_details`, `search_products`, `compare_products` and `get_product_reviews`, plus reference resources under `vaper://site/*`.
 
 ### 2. Public API
 
@@ -39,28 +40,30 @@ Developers can integrate Vaper Club data into their own applications using the p
 
 | Property | Value |
 |---|---|
-| API Base URL | `https://api.vaper.club/public-api/v1/` |
-| Documentation | [Public API Documentation](https://vaper.club/developers/api.md) |
+| API Base URL | `https://api.vaper.club/public-api/v1` |
+| Documentation | [Public API Documentation](https://vaper.club/developers/api.md) · [docs/api.md](docs/api.md) |
 | Format | JSON |
 | Protocol | HTTPS |
+| Authentication | None (rate limited per IP) |
 
-Refer to the API documentation for available endpoints, parameters, response schemas, and access requirements.
+Refer to the API documentation for endpoints, parameters, response schemas and error codes.
 
 ### 3. Agent Skills
 
 This repository provides reusable Agent Skills to help AI agents understand Vaper Club's data structure and use its services correctly.
 
-Skills are designed to work with compatible AI agent environments and can be extended independently.
+Skills are designed to work with compatible AI agent environments and can be extended independently. They are also published for discovery at `https://vaper.club/.well-known/agent-skills/index.json`.
 
 ## Available Skills
 
 | Skill | Description |
 |---|---|
-| `vaper-club-search` | Search and retrieve product, brand, model, and store information through Vaper Club services. |
-| `vape-product-identification` | Understand product naming conventions, brand identification, and model normalization. |
-| `vape-brand-research` | Research vaping brands and organize structured brand information. |
+| `vaper-club-discovery` | Search posts (news, reviews, guides), brands and retail shops. |
+| `vaper-club-product-research` | Find and identify products, see prices and stock across shops, compare offers of the same model. |
+| `vaper-club-brand-research` | Build a brand profile: background, website, company, aliases, categories and models. |
+| `vaper-club-product-reviews` | Summarize user reviews, ratings, and common praise and complaints of a product. |
 
-See the `skills/` directory for individual skill instructions and usage requirements.
+See [skills/index.json](skills/index.json) and the `skills/` directory for individual skill instructions.
 
 ## Getting Started
 
@@ -72,13 +75,13 @@ Add the following MCP server configuration to an MCP-compatible client:
 {
   "mcpServers": {
     "vaper-club": {
-      "url": "https://api.vaper.club/mcp/"
+      "url": "https://api.vaper.club/mcp"
     }
   }
 }
 ```
 
-The actual authentication requirements, if any, are documented in the MCP documentation.
+No authentication is required.
 
 ### Use Agent Skills
 
@@ -88,32 +91,34 @@ Clone this repository:
 git clone https://github.com/YOUR_GITHUB_USERNAME/vaper-club-agent.git
 ```
 
-Install or copy the required skill directory into the skill discovery directory supported by your AI agent.
-
-Refer to your agent's documentation for its specific skill installation procedure.
+Copy the required directories from `skills/` (for example `skills/vaper-club-product-research`) into the skill directory supported by your AI agent. The skills call the MCP server above, so connect it first.
 
 ### Use the Public API
 
-Visit the [Vaper Club Public API Documentation](https://api.vaper.club/public-api/v1/) to explore available endpoints and integration examples.
+```bash
+curl "https://api.vaper.club/public-api/v1/products/search?q=disposable&pageSize=5"
+```
+
+See [docs/api.md](docs/api.md) for all endpoints.
 
 ## Use Cases
 
 Vaper Club integrations can help developers and AI agents with:
 
-- Searching for vaping products by name, brand, or model.
-- Retrieving structured product specifications.
-- Discovering product brands and related models.
-- Comparing product listings across retailers.
-- Identifying product categories and product types.
+- Reading the latest vape industry posts and searching articles.
+- Searching brands and shops, and reading their profiles.
+- Searching products and comparing prices and stock of the same model across retailers.
+- Summarizing product ratings and the newest user reviews.
 - Building applications that consume structured vaping industry data.
 
-Actual capabilities and data availability depend on the API and MCP tools currently exposed by Vaper Club.
+Actual capabilities and data availability depend on the API and MCP tools currently exposed by Vaper Club. Vaper Club is intended for adults only and provides no guidance on circumventing age verification or legal restrictions.
 
 ## Documentation
 
 - Website: https://vaper.club
-- Public API: https://api.vaper.club/public-api/v1/
-- MCP Server: https://api.vaper.club/mcp/
+- Public API: https://api.vaper.club/public-api/v1 ([docs/api.md](docs/api.md))
+- MCP Server: https://api.vaper.club/mcp ([mcp/README.md](mcp/README.md))
+- Skills index: https://vaper.club/.well-known/agent-skills/index.json
 - GitHub Repository: https://github.com/YOUR_GITHUB_USERNAME/vaper-club-agent
 
 ## Contributing

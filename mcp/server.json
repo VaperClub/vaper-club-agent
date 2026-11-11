@@ -8,8 +8,34 @@
   "repository": {
     "url": "https://github.com/VaperClub/vaper-club-agent",
     "source": "github",
-    "subfolder": "mcp"
+    "subfolder": "mcp-server"
   },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "vaper-club-mcp",
+      "version": "1.0.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "VAPER_CLUB_API_BASE_URL",
+          "description": "Vaper.club Public API base URL.",
+          "isRequired": false,
+          "default": "https://api.vaper.club/public-api/v1/"
+        },
+        {
+          "name": "VAPER_CLUB_API_TIMEOUT",
+          "description": "API request timeout in seconds.",
+          "isRequired": false,
+          "default": "15"
+        }
+      ]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",

@@ -1,0 +1,56 @@
+{
+  "name": "vaper-club-mcp",
+  "version": "1.0.0",
+  "description": "Local STDIO MCP server for Vaper.club: search vape products, brands, shops and reviews through the Vaper.club Public API.",
+  "type": "module",
+  "bin": {
+    "vaper-club-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && vitest run",
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "vaper.club",
+    "vape",
+    "ai-agent"
+  ],
+  "license": "MIT",
+  "homepage": "https://vaper.club",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VaperClub/vaper-club-agent.git",
+    "directory": "mcp-server"
+  },
+  "bugs": {
+    "url": "https://github.com/VaperClub/vaper-club-agent/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "mcpName": "club.vaper/vaper-club",
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "^3.10.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}

@@ -34,6 +34,8 @@ Connect AI agents and MCP-compatible applications directly to Vaper Club.
 
 The server exposes read-only tools: `get_latest_posts`, `search_posts`, `search_brands`, `get_brand_details`, `search_shops`, `get_shop_details`, `search_products`, `compare_products` and `get_product_reviews`, plus reference resources under `vaper://site/*`.
 
+A local STDIO adapter is also available as the npm package `vaper-club-mcp` (`npx -y vaper-club-mcp`); see [mcp-server/README.md](mcp-server/README.md).
+
 ### 2. Public API
 
 Developers can integrate Vaper Club data into their own applications using the public API.

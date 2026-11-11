@@ -2,9 +2,14 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "club.vaper/vaper-club",
   "title": "Vaper.club",
-  "description": "Read-only vape industry data: latest posts, brand and shop search, product search and comparison, and product reviews.",
+  "description": "Read-only vape industry data: posts, brands, shops, product search, comparison and reviews.",
   "version": "1.0.0",
   "websiteUrl": "https://vaper.club/developers/mcp",
+  "repository": {
+    "url": "https://github.com/VaperClub/vaper-club-agent",
+    "source": "github",
+    "subfolder": "mcp"
+  },
   "remotes": [
     {
       "type": "streamable-http",

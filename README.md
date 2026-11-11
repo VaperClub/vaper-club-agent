@@ -88,7 +88,7 @@ No authentication is required.
 Clone this repository:
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/vaper-club-agent.git
+git clone https://github.com/VaperClub/vaper-club-agent.git
 ```
 
 Copy the required directories from `skills/` (for example `skills/vaper-club-product-research`) into the skill directory supported by your AI agent. The skills call the MCP server above, so connect it first.
@@ -119,7 +119,7 @@ Actual capabilities and data availability depend on the API and MCP tools curren
 - Public API: https://api.vaper.club/public-api/v1 ([docs/api.md](docs/api.md))
 - MCP Server: https://api.vaper.club/mcp ([mcp/README.md](mcp/README.md))
 - Skills index: https://vaper.club/.well-known/agent-skills/index.json
-- GitHub Repository: https://github.com/YOUR_GITHUB_USERNAME/vaper-club-agent
+- GitHub Repository: https://github.com/VaperClub/vaper-club-agent
 
 ## Contributing
 

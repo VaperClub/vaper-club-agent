@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vaper-club-mcp"
+version = "1.0.0"
+description = "Local STDIO MCP server for Vaper.club: search vape products, brands, shops and reviews through the Vaper.club Public API."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+keywords = ["mcp", "model-context-protocol", "vaper.club", "vape", "ai-agent"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "mcp>=1.9,<2",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "build", "twine"]
+
+[project.urls]
+Homepage = "https://vaper.club"
+Repository = "https://github.com/VaperClub/vaper-club-agent"
+Issues = "https://github.com/VaperClub/vaper-club-agent/issues"
+
+[project.scripts]
+vaper-club-mcp = "vaper_club_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vaper_club_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

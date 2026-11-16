@@ -137,4 +137,4 @@ The tests also launch the compiled CLI and talk to it over STDIO against a local
 - MCP endpoint: <https://api.vaper.club/mcp/>
 - Public API: <https://api.vaper.club/public-api/v1/>
 - GitHub: <https://github.com/VaperClub/vaper-club-agent>
-- Registry manifest: [../mcp/server.json](../mcp/server.json)
+- Registry manifest: [server.json](server.json)

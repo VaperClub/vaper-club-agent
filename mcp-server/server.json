@@ -3,11 +3,19 @@
   "name": "club.vaper/vaper-club",
   "title": "Vaper.club",
   "description": "Read-only vape industry data: posts, brands, shops, product search, comparison and reviews.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://vaper.club/developers/mcp",
+  "icons": [
+    {
+      "src": "https://vaper.club/favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
   "repository": {
     "url": "https://github.com/VaperClub/vaper-club-agent",
     "source": "github",
+    "id": "1452730612",
     "subfolder": "mcp-server"
   },
   "packages": [
@@ -15,7 +23,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "vaper-club-mcp",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"
@@ -25,13 +33,22 @@
           "name": "VAPER_CLUB_API_BASE_URL",
           "description": "Vaper.club Public API base URL.",
           "isRequired": false,
+          "format": "string",
           "default": "https://api.vaper.club/public-api/v1/"
         },
         {
           "name": "VAPER_CLUB_API_TIMEOUT",
-          "description": "API request timeout in seconds.",
+          "description": "API request timeout in seconds (0-300).",
           "isRequired": false,
+          "format": "number",
           "default": "15"
+        },
+        {
+          "name": "VAPER_CLUB_API_KEY",
+          "description": "Optional bearer token for the Vaper.club Public API.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
         }
       ]
     },
@@ -39,7 +56,7 @@
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "vaper-club-mcp",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"
@@ -49,13 +66,22 @@
           "name": "VAPER_CLUB_API_BASE_URL",
           "description": "Vaper.club Public API base URL.",
           "isRequired": false,
+          "format": "string",
           "default": "https://api.vaper.club/public-api/v1/"
         },
         {
           "name": "VAPER_CLUB_API_TIMEOUT",
-          "description": "API request timeout in seconds.",
+          "description": "API request timeout in seconds (0-300).",
           "isRequired": false,
+          "format": "number",
           "default": "15"
+        },
+        {
+          "name": "VAPER_CLUB_API_KEY",
+          "description": "Optional bearer token for the Vaper.club Public API.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
         }
       ]
     }

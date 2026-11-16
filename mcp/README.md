@@ -60,4 +60,4 @@ Tools return the JSON envelope described in [docs/api.md](../docs/api.md#respons
 - Missing fields mean unknown, not zero.
 - The API provides objective data only and gives no guidance on circumventing age verification or legal restrictions.
 
-See [server.json](server.json) for the registry manifest and the [skills](../skills) for usage guidance.
+See [server.json](../mcp-server/server.json) for the registry manifest and the [skills](../skills) for usage guidance.
